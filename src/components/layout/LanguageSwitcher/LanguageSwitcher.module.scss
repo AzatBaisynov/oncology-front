@@ -1,0 +1,23 @@
+.switcher {
+  display: flex;
+  gap: 4px;
+}
+
+.item {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: color var(--transition), background-color var(--transition);
+
+  @include hover {
+    color: var(--color-text);
+  }
+}
+
+.active {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  pointer-events: none;
+}

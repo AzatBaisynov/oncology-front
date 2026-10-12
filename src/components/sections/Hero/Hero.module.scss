@@ -1,0 +1,15 @@
+.hero {
+  min-height: calc(100dvh - var(--header-height));
+  display: flex;
+  align-items: center;
+  // Фон секции: положите картинку в public/images/hero/
+  // background: url('/images/hero/bg.webp') center / cover no-repeat;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-top: 32px;
+}

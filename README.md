@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Landing
 
-## Getting Started
+Лендинг на **Next.js 16** (App Router) + **TypeScript** + **SCSS** + мультиязычность **next-intl** (ru / ky / en).
 
-First, run the development server:
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install      # установить зависимости (один раз после клонирования)
+npm run dev      # режим разработки → http://localhost:3000
+npm run build    # сборка для продакшена
+npm run start    # запуск собранной версии
+npm run lint     # проверка кода
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Нужен Node.js 20.9 или новее.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Структура
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+lang/                     переводы: ru.json, ky.json, en.json
+public/
+  images/<секция>/        картинки, по папке на секцию + common/
+  icons/                  svg-иконки, логотип
+src/
+  app/
+    [locale]/
+      layout.tsx          html, шрифт, мета-данные, Header и Footer
+      page.tsx            лендинг: здесь подключаются секции по порядку
+      not-found.tsx       страница 404
+      [...rest]/          отправляет несуществующие адреса на 404
+    favicon.ico           иконка сайта (замените, имя оставьте)
+    robots.ts             /robots.txt
+    sitemap.ts            /sitemap.xml
+  components/
+    ui/                   мелкие переиспользуемые элементы (Button)
+    layout/               Header, Footer, LanguageSwitcher
+    sections/             секции лендинга
+  i18n/
+    routing.ts            список языков и язык по умолчанию
+    request.ts            загрузка переводов из lang/
+    navigation.ts         Link / useRouter, сохраняющие язык
+  styles/
+    reset.scss            сброс браузерных стилей
+    variables.scss        цвета, шрифты, размеры (CSS-переменные)
+    mixins.scss           адаптив и заготовки (подключается автоматически)
+    typography.scss       текст, заголовки, .title, .subtitle
+    main.scss             .container, .section, .visually-hidden
+    index.scss            собирает всё, подключён в layout
+  proxy.ts                редирект / → /ru и определение языка
+```
 
-## Learn More
+## Шаблон секции
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import { useTranslations } from 'next-intl';
+import styles from './Reviews.module.scss';
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export function Reviews() {
+  const t = useTranslations('Reviews');
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  return (
+    <section id="reviews" className="section">
+      <div className="container">
+        <h2 className="title">{t('title')}</h2>
+        {/* своя вёрстка */}
+      </div>
+    </section>
+  );
+}
+```
 
-## Deploy on Vercel
+## Как добавить новую секцию
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Создать `src/components/sections/Reviews/` с файлами `Reviews.tsx` и `Reviews.module.scss`.
+2. Создать папку для картинок `public/images/reviews/`.
+3. Добавить блок `"Reviews": { ... }` во **все** файлы в `lang/`.
+4. Подключить `<Reviews />` в `src/app/[locale]/page.tsx`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Общие правила
+
+- Цвета, шрифты и размеры брать только из переменных: `color: var(--color-accent)`.
+- Адаптив писать через миксины: `@include mq(md) { ... }`. Импортировать миксины не нужно.
+- Ссылки внутри сайта — через `Link` из `@/i18n/navigation`, якоря — обычным `<a href="#id">`.
+- Тексты не писать в разметке, только в `lang/*.json`.
+
+## Перед запуском в продакшен
+
+- Заменить `https://example.kg` на свой домен в `layout.tsx`, `robots.ts`, `sitemap.ts`.
+- Заполнить блок `"Meta"` в `lang/*.json`.
+- Положить `og-image.jpg` в `public/images/common/` и раскомментировать строку `images` в `layout.tsx`.
+- Заменить `src/app/favicon.ico`.

@@ -1,7 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
+import path from 'path';
+
+// Подключает настройки i18n из src/i18n/request.ts
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  cacheComponents: true,
+  partialPrefetching: true,
+
+  sassOptions: {
+    // Папка, из которой SCSS ищет файлы по короткому имени ("mixins")
+    loadPaths: [path.join(process.cwd(), 'src/styles')],
+    // Миксины автоматически доступны в каждом .module.scss без импорта
+    additionalData: `@use "mixins" as *;\n`,
+  },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

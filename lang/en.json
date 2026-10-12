@@ -1,0 +1,31 @@
+{
+  "Meta": {
+    "title": "Site title",
+    "description": "Short site description for search engines and social networks"
+  },
+  "Header": {
+    "about": "About",
+    "contacts": "Contacts"
+  },
+  "Hero": {
+    "title": "Welcome",
+    "subtitle": "The main landing headline goes here",
+    "button": "Learn more"
+  },
+  "About": {
+    "title": "About us",
+    "text": "About section text."
+  },
+  "Contacts": {
+    "title": "Contacts",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "Footer": {
+    "rights": "All rights reserved"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "back": "Back to home"
+  }
+}

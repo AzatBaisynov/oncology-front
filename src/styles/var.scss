@@ -8,8 +8,13 @@
   --bg: #f9fbfd;
   --red: #c72d36;
   --text: #000;
-  --grey: #f2f6f8;
-   
+  --grey: #8a93a3;
+  --color-white: #ffffff;
+  --color-accent-hover: #a31422;
+  --color-border: #cbd5e1;
+  --color-shadow-accent: rgba(199, 45, 54, 0.25);
+  --color-shadow-image: rgba(0, 0, 0, 0.03);
+  --color-shadow-card: rgba(0, 0, 0, 0.04); 
 
   // ---- Шрифты ----
   // --font-main задаётся в app/[locale]/layout.tsx через next/font

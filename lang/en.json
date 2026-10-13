@@ -13,8 +13,29 @@
     "button": "Learn more"
   },
   "About": {
-    "title": "About us",
-    "text": "About section text."
+    "subtitle": "About the center",
+    "title": "Guarding people's health",
+    "text": "The National Center of Oncology is a modern clinic combining diagnostics, treatment, science, and patient care.",
+    "button": "Learn more about the center",
+    "imageAlt": "National Center of Oncology",
+    "mission": "Our mission is to give people more time for life — with care, professionalism, and hope.",
+    "stats": {
+      "patients": {
+        "caption": "Annually",
+        "value": "10 000+",
+        "desc": "patients"
+      },
+      "doctors": {
+        "caption": "More than",
+        "value": "200",
+        "desc": "doctors and specialists"
+      },
+      "equipment": {
+        "caption": "Modern",
+        "value": "equipment",
+        "desc": "of world class"
+      }
+    }
   },
   "Contacts": {
     "title": "Contacts",

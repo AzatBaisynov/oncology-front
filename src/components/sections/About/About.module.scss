@@ -1,4 +1,164 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 48px;
+  align-items: start;
+
+  @include mq(lg) {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+  }
+
+  @include mq(md) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.subtitle {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
 .text {
-  max-width: 720px;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 32px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 32px;
+
+  @include mq(sm) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statCaption {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statValueAccent {
+  color: var(--red);
   font-size: 18px;
+  word-break: break-word;
+}
+
+.statDesc {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.3;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--red);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  transition: all var(--transition);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  @include hover {
+    background-color: #a31422;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btnIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.imageBlock {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.img {
+  object-fit: cover;
+}
+
+.mission {
+  padding-left: 24px;
+  border-left: 2px solid var(--red);
+  margin-top: 48px;
+
+  @include mq(lg) {
+    grid-column: span 2;
+    margin-top: 16px;
+  }
+
+  @include mq(md) {
+    grid-column: span 1;
+  }
+}
+
+.quoteIcon {
+  display: block;
+  font-size: 60px;
+  color: var(--red);
+  line-height: 1;
+  font-family: Georgia, serif;
+  margin-top: -16px;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.missionText {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.6;
 }

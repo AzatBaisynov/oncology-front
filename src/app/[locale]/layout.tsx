@@ -8,22 +8,18 @@ import { Header } from '@/components/layout/Header/Header';
 import { Footer } from '@/components/layout/Footer/Footer';
 import '@/styles/index.scss';
 
-// Основной шрифт сайта. cyrillic-ext нужен для кыргызских букв ң, ө, ү
 const fontMain = Inter({
   variable: '--font-main',
   subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
   display: 'swap',
 });
 
-// Адрес сайта — замените на свой домен
 const SITE_URL = 'https://example.kg';
 
-// Заранее собираем страницы для всех языков
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-// Заголовок и описание страницы на каждом языке (из lang/*.json → "Meta")
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Meta' });
@@ -41,7 +37,6 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
       description: t('description'),
       locale,
       type: 'website',
-      // images: ['/images/common/og-image.jpg'],
     },
   };
 }

@@ -1,48 +1,38 @@
-// =========================================================
-// MIXINS — заготовки для адаптива и частых приёмов
-// Подключаются автоматически во все .module.scss (см. next.config.ts),
-// поэтому импортировать этот файл вручную не нужно.
-// =========================================================
+
 
 @use 'sass:map';
 
-// ---- Брейкпоинты ----
 $breakpoints: (
+  xs: 400px,
   sm: 576px,   // телефоны
   md: 768px,   // планшеты
   lg: 1024px,  // ноутбуки
   xl: 1280px,  // большие экраны
 );
 
-// Всё, что МЕНЬШЕ указанной ширины:  @include mq(md) { ... }
 @mixin mq($bp) {
   @media (max-width: (map.get($breakpoints, $bp) - 1px)) {
     @content;
   }
 }
 
-// Всё, что БОЛЬШЕ или равно указанной ширине:  @include mq-up(lg) { ... }
 @mixin mq-up($bp) {
   @media (min-width: map.get($breakpoints, $bp)) {
     @content;
   }
 }
 
-// ---- Раскладка ----
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-// Растянуть элемент на весь родитель (фоны, оверлеи)
 @mixin cover {
   position: absolute;
   inset: 0;
 }
 
-// ---- Текст ----
-// Обрезать текст многоточием после N строк
 @mixin line-clamp($lines: 1) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;
@@ -50,8 +40,6 @@ $breakpoints: (
   overflow: hidden;
 }
 
-// ---- Взаимодействие ----
-// Hover только на устройствах с мышкой (на телефоне не «залипает»)
 @mixin hover {
   @media (hover: hover) {
     &:hover {

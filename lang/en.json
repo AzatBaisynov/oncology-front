@@ -27,5 +27,23 @@
   "NotFound": {
     "title": "Page not found",
     "back": "Back to home"
+  },
+  "Directions": {
+    "badge": "Priority Directions",
+    "title": "Modern Approaches to Cancer Treatment",
+    "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
+    "allDirections": "All directions",
+    "diagnostics": {
+      "title": "Diagnostics",
+      "description": "Accurate diagnostics is the basis of effective treatment"
+    },
+    "surgery": {
+      "title": "Surgical Treatment",
+      "description": "Modern and minimally invasive methods"
+    },
+    "radiation": {
+      "title": "Radiation Therapy",
+      "description": "High-tech equipment"
+    }
   }
 }

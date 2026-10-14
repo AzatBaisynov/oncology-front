@@ -1,0 +1,126 @@
+.section {
+  background-color: var(--red, #c72d36); 
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+  gap: 40px;
+
+  @include mq(lg) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  font-size: var(--fs-small, 14px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: var(--fs-h2, 36px);
+  font-weight: 700;
+  color: var(--color-white); 
+  line-height: 1.2;
+  max-width: 650px;
+}
+
+.headerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 460px;
+
+  @include mq(lg) {
+    max-width: 100%;
+    gap: 24px;
+  }
+}
+
+.subtitle {
+  font-size: var(--fs-body);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.allLink {
+  font-size: var(--fs-body, 16px);
+  font-weight: 600;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition, 0.3s ease);
+
+  @include hover {
+    opacity: 0.8;
+  }
+}
+
+.arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrowBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition, 0.3s ease);
+
+  @include flex-center;
+
+  &.left {
+    img, svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include hover {
+    background: var(--bg);
+    border-color: var(--bg);
+
+    img {
+      filter: brightness(0) saturate(100%) invert(20%) sepia(85%) saturate(2000%) hue-rotate(340deg);
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  padding: 6px 0;
+
+  :global(.swiper-slide) {
+    height: auto;
+    display: flex;
+  }
+
+  :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+}

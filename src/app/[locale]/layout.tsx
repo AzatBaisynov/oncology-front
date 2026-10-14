@@ -54,7 +54,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
 
   return (
     <html lang={locale} className={fontMain.variable}>
-      <body>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider>
           <Header />
           <main>{children}</main>

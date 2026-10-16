@@ -9,7 +9,20 @@
   --red: #c72d36;
   --text: #000;
   --grey: #f2f6f8;
-   
+  --color-white: #ffffff;
+  --color-bg: var(--bg);
+  --color-accent: var(--red);
+  --color-accent-hover: #a31422;
+  --color-text: var(--text);
+  --color-text-heading: #111827;
+  --color-text-body: #4b5563;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #9ca3af;
+  --color-border: #cbd5e1;
+  --color-surface: var(--grey);
+  --color-shadow-accent: rgba(199, 45, 54, 0.25);
+  --color-shadow-image: rgba(0, 0, 0, 0.03);
+  --color-shadow-card: rgba(0, 0, 0, 0.04);
 
   // ---- Шрифты ----
   // --font-main задаётся в app/[locale]/layout.tsx через next/font

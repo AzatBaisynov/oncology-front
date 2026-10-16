@@ -10,6 +10,10 @@
 // =========================================================
 
 // Ограничивает ширину контента и центрирует его
+body {
+  font-family: var(--font-family);
+}
+
 .container {
   width: 100%;
   max-width: calc(var(--container-width) + var(--container-padding) * 2);

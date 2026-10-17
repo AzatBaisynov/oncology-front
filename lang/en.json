@@ -21,9 +21,6 @@
     "phone": "Phone",
     "email": "Email"
   },
-  "Footer": {
-    "rights": "All rights reserved"
-  },
   "NotFound": {
     "title": "Page not found",
     "back": "Back to home"
@@ -44,6 +41,19 @@
     "radiation": {
       "title": "Radiation Therapy",
       "description": "High-tech equipment"
+    }
+  },
+  "Footer": {
+    "rights": "© 2024 National Oncology Center of the Kyrgyz Republic",
+    "slogan": "Care. Science. Life.",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "navLabel": "Footer navigation",
+    "nav": {
+      "about": "About the Center",
+      "patients": "For Patients",
+      "specialists": "For Specialists",
+      "press": "Press Center",
+      "contacts": "Contacts"
     }
   }
 }

@@ -1,3 +1,7 @@
+import ru from "./locales/ru.json";
+import en from "./locales/en.json";
+import kg from "./locales/kg.json";
+
 export type Lang = "kg" | "en" | "ru";
 
 export const LANGS: { id: Lang; label: string }[] = [
@@ -12,66 +16,14 @@ export const HTML_LANG: Record<Lang, string> = {
   ru: "ru",
 };
 
-export type Translation = {
-  eyebrow: string;
-  heading: string;
-  address: string;
-  title: string;
-  phoneNote: string;
-  button: string;
-  pickerTitle: string;
-  pickerSub: string;
-  close: string;
-  mapLabel: string;
-  routes: { google: string; gis: string };
-};
+export type Translation = typeof ru;
 
-export const TEXT: Record<Lang, Translation> = {
-  ru: {
-    eyebrow: "Как к нам добраться",
-    heading: "Мы рядом",
-    address: "г. Бишкек, ул. Исы Ахунбаева, 92",
-    title: "Национальный центр онкологии",
-    phoneNote: "Единый контакт-центр",
-    button: "Построить маршрут",
-    pickerTitle: "Построить маршрут",
-    pickerSub: "Выберите приложение для навигации",
-    close: "Закрыть",
-    mapLabel: "Карта",
-    routes: { google: "Google Maps", gis: "2ГИС" },
-  },
-  en: {
-    eyebrow: "How to find us",
-    heading: "We are nearby",
-    address: "92 Isy Akhunbaeva St., Bishkek",
-    title: "National Oncology Center",
-    phoneNote: "Unified contact center",
-    button: "Get directions",
-    pickerTitle: "Get directions",
-    pickerSub: "Choose a navigation app",
-    close: "Close",
-    mapLabel: "Map",
-    routes: { google: "Google Maps", gis: "2GIS" },
-  },
-  kg: {
-    eyebrow: "Бизге кантип жетүүгө болот",
-    heading: "Биз жакынбыз",
-    address: "Бишкек ш. И. Ахунбаев көч., 92",
-    title: "Улуттук онкология борбору",
-    phoneNote: "Бирдиктүү байланыш борбору",
-    button: "Маршрут түзүү",
-    pickerTitle: "Маршрут түзүү",
-    pickerSub: "Навигация үчүн тиркемени тандаңыз",
-    close: "Жабуу",
-    mapLabel: "Карта",
-    routes: { google: "Google Maps", gis: "2ГИС" },
-  },
-};
+export const TEXT: Record<Lang, Translation> = { ru, en, kg };
 
 export const PHONE = "+996 (312) 66-20-20";
 
-const LAT = 42.839483;
-const LNG = 74.613748;
+export const LAT = 42.839483;
+export const LNG = 74.613748;
 const GIS_FIRM_ID = "70000001021126125";
 
 export type RouteOption = {
@@ -84,7 +36,7 @@ export const ROUTE_OPTIONS: RouteOption[] = [
   {
     id: "google",
     icon: "/icons/google-maps.svg",
-       url: () =>
+    url: () =>
       `https://www.google.com/maps/search/?api=1&query=${LAT},${LNG}`,
   },
   {

@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "./ContactBlock.css";
+import dynamic from "next/dynamic";
+import "./var.scss";
+import "./ContactBlock.scss";
 import { HTML_LANG, LANGS, PHONE, TEXT, type Lang } from "./data";
 import RoutePicker from "./RoutePicker";
+
+const PlaceMap = dynamic(() => import("./PlaceMap"), { ssr: false });
 
 export default function ContactBlock() {
   const [open, setOpen] = useState(false);
@@ -73,16 +77,8 @@ export default function ContactBlock() {
         </button>
       </div>
 
-      <div className="cb__map" role="img" aria-label={`${t.mapLabel}: ${t.title}, ${t.address}`}>
-        <div className="cb__stage">
-          <img className="cb__map-img" src="/images/map.png" alt="" draggable={false} />
-          <div className="cb__tip">
-            <div className="cb__pin" aria-hidden="true">
-              <img src="/icons/marker.svg" alt="" />
-            </div>
-            <div className="cb__label">{t.title}</div>
-          </div>
-        </div>
+      <div className="cb__map" role="region" aria-label={`${t.mapLabel}: ${t.title}, ${t.address}`}>
+        <PlaceMap title={t.title} />
       </div>
 
       {open && <RoutePicker lang={lang} onClose={() => setOpen(false)} />}

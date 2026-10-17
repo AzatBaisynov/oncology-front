@@ -12,7 +12,7 @@ const labels: Record<string, string> = {
   en: 'EN',
 };
 
-export function LanguageSwitcher() {
+export const LanguageSwitcher = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -32,4 +32,4 @@ export function LanguageSwitcher() {
       ))}
     </div>
   );
-}
+};

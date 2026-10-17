@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import styles from './About.module.scss';
 
-export function About() {
+export const About = () => {
   const t = useTranslations('About');
 
   return (
@@ -12,4 +12,4 @@ export function About() {
       </div>
     </section>
   );
-}
+};

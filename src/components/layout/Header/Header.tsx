@@ -3,7 +3,7 @@ import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import styles from './Header.module.scss';
 
-export function Header() {
+export const Header = () => {
   const t = useTranslations('Header');
 
   return (
@@ -22,4 +22,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+};

@@ -19,12 +19,12 @@ const fontMain = Inter({
 const SITE_URL = 'https://example.kg';
 
 // Заранее собираем страницы для всех языков
-export function generateStaticParams() {
+export const generateStaticParams = () => {
   return routing.locales.map((locale) => ({ locale }));
-}
+};
 
 // Заголовок и описание страницы на каждом языке (из lang/*.json → "Meta")
-export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
+export const generateMetadata = async ({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> =>  {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Meta' });
 
@@ -44,9 +44,9 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
       // images: ['/images/common/og-image.jpg'],
     },
   };
-}
+};
 
-export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
+const LocaleLayout = async ({ children, params }: LayoutProps<'/[locale]'>) =>  {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
@@ -63,4 +63,5 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       </body>
     </html>
   );
-}
+};
+export default LocaleLayout;

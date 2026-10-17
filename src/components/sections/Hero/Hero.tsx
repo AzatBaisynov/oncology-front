@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button/Button';
 import styles from './Hero.module.scss';
 
-export function Hero() {
+export const Hero = () => {
   const t = useTranslations('Hero');
 
   return (
@@ -16,4 +16,4 @@ export function Hero() {
       </div>
     </section>
   );
-}
+};

@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function Button({ href, variant = 'primary', className, children, ...rest }: Props) {
+export const Button = ({ href, variant = 'primary', className, children, ...rest }: Props) => {
   const classes = clsx(styles.button, styles[variant], className);
 
   if (href) {
@@ -24,4 +24,4 @@ export function Button({ href, variant = 'primary', className, children, ...rest
       {children}
     </button>
   );
-}
+};

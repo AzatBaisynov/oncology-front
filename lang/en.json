@@ -4,20 +4,20 @@
     "description": "Short site description for search engines and social networks"
   },
   "Header": {
-    "about": "About",
-    "contacts": "Contacts"
+    "nav": "Main navigation",
+    "menu": "Menu",
+    "language": "Language",
+    "news": "News",
+    "departments": "Departments",
+    "contacts": "Contacts",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "search": "Search",
+    "closeMenu": "Close menu"
   },
   "Hero": {
-    "eyebrow": "Modern oncology — caring for what matters most",
-    "title": "More possibilities <accent>for life</accent>",
-    "text": "Diagnosis, treatment and support <br></br>at every stage. We are here for you.",
-    "imageAlt": "National Oncology Center",
-    "cards": {
-      "diagnostics": { "title": "Diagnostics", "text": "Modern equipment" },
-      "treatment": { "title": "Treatment", "text": "Effective methods" },
-      "rehab": { "title": "Rehabilitation", "text": "Support at every stage" },
-      "consult": { "title": "Consultations", "text": "For patients and their families" }
-    }
+    "title": "Welcome",
+    "subtitle": "The main landing headline goes here",
+    "button": "Learn more"
   },
   "About": {
     "title": "About us",
@@ -34,23 +34,5 @@
   "NotFound": {
     "title": "Page not found",
     "back": "Back to home"
-  },
-  "Directions": {
-    "badge": "Priority Directions",
-    "title": "Modern Approaches to Cancer Treatment",
-    "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
-    "allDirections": "All directions",
-    "diagnostics": {
-      "title": "Diagnostics",
-      "description": "Accurate diagnostics is the basis of effective treatment"
-    },
-    "surgery": {
-      "title": "Surgical Treatment",
-      "description": "Modern and minimally invasive methods"
-    },
-    "radiation": {
-      "title": "Radiation Therapy",
-      "description": "High-tech equipment"
-    }
   }
 }

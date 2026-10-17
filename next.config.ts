@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
 
+
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'fastly.picsum.photos' },
+    ],
+  },
+  
   sassOptions: {
     // Папка, из которой SCSS ищет файлы по короткому имени ("mixins")
     loadPaths: [path.join(process.cwd(), 'src/styles')],

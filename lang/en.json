@@ -8,9 +8,16 @@
     "contacts": "Contacts"
   },
   "Hero": {
-    "title": "Welcome",
-    "subtitle": "The main landing headline goes here",
-    "button": "Learn more"
+    "eyebrow": "Modern oncology — caring for what matters most",
+    "title": "More possibilities <accent>for life</accent>",
+    "text": "Diagnosis, treatment and support <br></br>at every stage. We are here for you.",
+    "imageAlt": "National Oncology Center",
+    "cards": {
+      "diagnostics": { "title": "Diagnostics", "text": "Modern equipment" },
+      "treatment": { "title": "Treatment", "text": "Effective methods" },
+      "rehab": { "title": "Rehabilitation", "text": "Support at every stage" },
+      "consult": { "title": "Consultations", "text": "For patients and their families" }
+    }
   },
   "About": {
     "title": "About us",

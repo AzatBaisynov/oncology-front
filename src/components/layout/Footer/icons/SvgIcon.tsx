@@ -1,0 +1,18 @@
+import type { SVGProps } from 'react';
+
+export function SvgIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width={22}
+      height={22}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    />
+  );
+}

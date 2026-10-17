@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button/Button';
 
-export default function NotFound() {
+const NotFound = () => {
   const t = useTranslations('NotFound');
 
   return (
@@ -15,4 +15,6 @@ export default function NotFound() {
       </div>
     </section>
   );
-}
+};
+
+export default NotFound;

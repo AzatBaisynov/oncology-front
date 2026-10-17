@@ -1,16 +1,10 @@
-
-
 :root {
-  // ---- Цвета ----
-  --color-white: #ffffff;
   --bg: #f9fbfd;
   --red: #c72d36;
-  --text: #111a33;
-  --grey: #8a93a3;
-  --black: #000;
-
-  // ---- Шрифты ----
-  // --font-main задаётся в app/[locale]/layout.tsx через next/font
+  --text: #000;
+  --grey: #f2f6f8;
+   
+  
   --font-family: var(--font-main), system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --fs-h1: clamp(32px, 5vw, 64px);
@@ -19,12 +13,12 @@
   --fs-body: 16px;
   --fs-small: 14px;
 
-  // ---- Контейнер и секции ----
+
   --container-width: 1240px;
   --container-padding: 20px;
   --section-gap: clamp(60px, 10vw, 120px);
 
-  // ---- Прочее ----
+  // Прочее
   --header-height: 72px;
   --radius: 12px;
   --transition: 0.3s ease;

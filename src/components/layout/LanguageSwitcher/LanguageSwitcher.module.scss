@@ -1,23 +1,59 @@
 .switcher {
-  display: flex;
-  gap: 4px;
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 4px 8px 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.chevron {
+  transition: transform var(--transition);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  min-width: 88px;
+  padding: 6px;
+  border-radius: var(--radius);
+  background-color: var(--color-white);
+  box-shadow:
+    0 8px 24px color-mix(in srgb, var(--text) 12%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--text) 6%, transparent);
 }
 
 .item {
-  padding: 6px 10px;
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
   border-radius: 8px;
-  font-size: var(--fs-small);
+  text-align: left;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--color-text-muted);
-  transition: color var(--transition), background-color var(--transition);
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--text) 65%, transparent);
 
   @include hover {
-    color: var(--color-text);
+    background-color: color-mix(in srgb, var(--text) 6%, transparent);
+    color: var(--text);
   }
 }
 
 .active {
-  color: var(--color-white);
-  background-color: var(--color-accent);
-  pointer-events: none;
+  background-color: color-mix(in srgb, var(--red) 10%, var(--color-white));
+  color: var(--red);
 }

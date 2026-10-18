@@ -1,5 +1,3 @@
-
-
 :root {
   // ---- Цвета ----
   --color-white: #ffffff;
@@ -8,6 +6,16 @@
   --text: #111a33;
   --grey: #8a93a3;
   --black: #000;
+  --dark: #1a1d20;
+  --grey-subtitle: #8c95a6;
+  --grey-date: #a0a7b5;
+  --grey-image: #eee;
+  --grey-border: #e2e7ee;
+  --grey-hover: #f3f5f8;
+  --blue-hover: #0056b3;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-nav: rgba(0, 0, 0, 0.04);
+  --overlay: rgba(0, 0, 0, 0.5);
 
   // ---- Шрифты ----
   // --font-main задаётся в app/[locale]/layout.tsx через next/font

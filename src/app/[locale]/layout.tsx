@@ -19,7 +19,6 @@ const fontMain = Inter({
 
 const SITE_URL = 'https://example.kg';
 
-
 export const generateStaticParams = () => {
   return routing.locales.map((locale) => ({ locale }));
 };

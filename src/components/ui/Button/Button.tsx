@@ -24,4 +24,4 @@ export const Button = ({ href, variant = 'primary', className, children, ...rest
       {children}
     </button>
   );
-}
+};

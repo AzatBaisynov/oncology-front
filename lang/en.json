@@ -26,13 +26,13 @@
       "consult": { "title": "Consultations", "text": "For patients and their families" }
     }
   },
-  "About": {
-  "title": "About us",
-  "text": "About section text."
-},
- "Directions": {
+   "About": {
+    "title": "About us",
+    "text": "About section text."
+  },
+  "Directions": {
     "badge": "Priority Directions",
-    "title": "Modern Approaches to Cancer Treatment",
+        "title": "Modern Approaches to Cancer Treatment",
     "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
     "allDirections": "All directions",
     "diagnostics": {
@@ -49,7 +49,17 @@
     }
   },
   "Footer": {
-    "rights": "All rights reserved"
+    "rights": "© 2026 National Oncology Center of the Kyrgyz Republic",
+    "slogan": "Care. Science. Life.",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "navLabel": "Footer navigation",
+    "nav": {
+      "about": "About the Center",
+      "patients": "For Patients",
+      "specialists": "For Specialists",
+      "press": "Press Center",
+      "contacts": "Contacts"
+    }
   },
   "NotFound": {
     "title": "Page not found",

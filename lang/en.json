@@ -4,30 +4,35 @@
     "description": "Short site description for search engines and social networks"
   },
   "Header": {
-    "about": "About",
-    "contacts": "Contacts"
+    "nav": "Main navigation",
+    "menu": "Menu",
+    "language": "Language",
+    "news": "News",
+    "departments": "Departments",
+    "contacts": "Contacts",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "search": "Search",
+    "closeMenu": "Close menu"
   },
   "Hero": {
-    "title": "Welcome",
-    "subtitle": "The main landing headline goes here",
-    "button": "Learn more"
+    "eyebrow": "Modern oncology — caring for what matters most",
+    "title": "More possibilities <accent>for life</accent>",
+    "text": "Diagnosis, treatment and support <br></br>at every stage. We are here for you.",
+    "imageAlt": "National Oncology Center",
+    "cards": {
+      "diagnostics": { "title": "Diagnostics", "text": "Modern equipment" },
+      "treatment": { "title": "Treatment", "text": "Effective methods" },
+      "rehab": { "title": "Rehabilitation", "text": "Support at every stage" },
+      "consult": { "title": "Consultations", "text": "For patients and their families" }
+    }
   },
-  "About": {
+   "About": {
     "title": "About us",
     "text": "About section text."
   },
-  "Contacts": {
-    "title": "Contacts",
-    "phone": "Phone",
-    "email": "Email"
-  },
-  "NotFound": {
-    "title": "Page not found",
-    "back": "Back to home"
-  },
   "Directions": {
     "badge": "Priority Directions",
-    "title": "Modern Approaches to Cancer Treatment",
+        "title": "Modern Approaches to Cancer Treatment",
     "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
     "allDirections": "All directions",
     "diagnostics": {
@@ -44,7 +49,7 @@
     }
   },
   "Footer": {
-    "rights": "© 2024 National Oncology Center of the Kyrgyz Republic",
+    "rights": "© 2026 National Oncology Center of the Kyrgyz Republic",
     "slogan": "Care. Science. Life.",
     "logoAlt": "National Oncology Center of the Kyrgyz Republic",
     "navLabel": "Footer navigation",
@@ -55,5 +60,9 @@
       "press": "Press Center",
       "contacts": "Contacts"
     }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "back": "Back to home"
   }
 }

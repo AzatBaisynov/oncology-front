@@ -1,14 +1,15 @@
 import { hasLocale } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
+import { locale as getRootLocale } from 'next/root-params';
 import { routing } from './routing';
 
 // Загружает файл переводов из папки lang/ для текущего языка
-export default getRequestConfig(async ({ requestLocale }) => {
-  const requested = await requestLocale;
-  const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
+export default getRequestConfig(async ({ locale }) => {
+  const requested = locale ?? (await getRootLocale());
+  const current = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
 
   return {
-    locale,
-    messages: (await import(`../../lang/${locale}.json`)).default,
+    locale: current,
+    messages: (await import(`../../lang/${current}.json`)).default,
   };
 });

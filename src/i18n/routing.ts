@@ -4,5 +4,5 @@ import { defineRouting } from 'next-intl/routing';
 // Чтобы добавить язык: допишите его сюда и создайте lang/<код>.json
 export const routing = defineRouting({
   locales: ['ru', 'ky', 'en'],
-  defaultLocale: 'ru',
+  defaultLocale: 'ky',
 });

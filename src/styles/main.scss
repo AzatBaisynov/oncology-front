@@ -1,19 +1,10 @@
-// =========================================================
-// MAIN — общие классы для любой секции
-//
-// Шаблон секции:
-//   <section id="about" className="section">
-//     <div className="container">
-//       <h2 className="title">...</h2>
-//     </div>
-//   </section>
-// =========================================================
-
 body {
   font-family: var(--font-family);
+  font-size: var(--fs-body);
+  color: var(--text);
+  background-color: var(--bg);
 }
 
-// Ограничивает ширину контента и центрирует его
 .container {
   width: 100%;
   max-width: calc(var(--container-width) + var(--container-padding) * 2);
@@ -21,14 +12,11 @@ body {
   padding-inline: var(--container-padding);
 }
 
-// Вертикальные отступы секции
 .section {
   padding-block: var(--section-gap);
-  // чтобы якорь (#about) не прятался под фиксированным хедером
   scroll-margin-top: var(--header-height);
 }
 
-// Скрыть визуально, но оставить для скринридеров и SEO
 .visually-hidden {
   position: absolute;
   width: 1px;

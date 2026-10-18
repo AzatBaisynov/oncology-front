@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing';
 const SITE_URL = 'https://example.kg';
 
 // Доступен по адресу /sitemap.xml — по одной ссылке на каждый язык
-export default function sitemap(): MetadataRoute.Sitemap {
+const sitemap = (): MetadataRoute.Sitemap => {
   return routing.locales.map((locale) => ({
     url: `${SITE_URL}/${locale}`,
     changeFrequency: 'monthly',
@@ -14,4 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}`])),
     },
   }));
-}
+};
+
+export default sitemap;

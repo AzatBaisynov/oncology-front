@@ -15,5 +15,3 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
     </>
   );
 };
-
-export default HomePage;

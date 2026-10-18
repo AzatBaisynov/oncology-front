@@ -20,19 +20,52 @@
     "text": "Diagnosis, treatment and support <br></br>at every stage. We are here for you.",
     "imageAlt": "National Oncology Center",
     "cards": {
-      "diagnostics": { "title": "Diagnostics", "text": "Modern equipment" },
-      "treatment": { "title": "Treatment", "text": "Effective methods" },
-      "rehab": { "title": "Rehabilitation", "text": "Support at every stage" },
-      "consult": { "title": "Consultations", "text": "For patients and their families" }
+      "diagnostics": {
+        "title": "Diagnostics",
+        "text": "Modern equipment"
+      },
+      "treatment": {
+        "title": "Treatment",
+        "text": "Effective methods"
+      },
+      "rehab": {
+        "title": "Rehabilitation",
+        "text": "Support at every stage"
+      },
+      "consult": {
+        "title": "Consultations",
+        "text": "For patients and their families"
+      }
     }
   },
-   "About": {
-    "title": "About us",
-    "text": "About section text."
+  "About": {
+    "subtitle": "About the center",
+    "title": "Guarding people's health",
+    "text": "The National Center of Oncology is a modern clinic combining diagnostics, treatment, science, and patient care.",
+    "button": "Learn more about the center",
+    "imageAlt": "National Center of Oncology",
+    "mission": "Our mission is to give people more time for life — with care, professionalism, and hope.",
+    "stats": {
+      "patients": {
+        "caption": "Annually",
+        "value": "10 000+",
+        "desc": "patients"
+      },
+      "doctors": {
+        "caption": "More than",
+        "value": "200",
+        "desc": "doctors and specialists"
+      },
+      "equipment": {
+        "caption": "Modern",
+        "value": "equipment",
+        "desc": "of world class"
+      }
+    }
   },
   "Directions": {
     "badge": "Priority Directions",
-        "title": "Modern Approaches to Cancer Treatment",
+    "title": "Modern Approaches to Cancer Treatment",
     "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
     "allDirections": "All directions",
     "diagnostics": {
@@ -64,5 +97,10 @@
   "NotFound": {
     "title": "Page not found",
     "back": "Back to home"
+  },
+  "Contacts": {
+    "title": "Contacts",
+    "phone": "Phone",
+    "email": "Email"
   }
 }

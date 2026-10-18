@@ -24,7 +24,7 @@ export const DirectionCard = ({ item }: DirectionCardProps) => {
           className={styles.image}
         />
       </div>
-      
+
       <div className={styles.content}>
         <div className={styles.textContainer}>
           <h3 className={styles.title}>{t(item.titleKey)}</h3>

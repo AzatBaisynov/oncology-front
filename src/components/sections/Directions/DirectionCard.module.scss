@@ -80,9 +80,9 @@
   border-radius: 50%;
   background-color: rgba(199, 45, 54, 0.08);
   border: 1px solid transparent;
-  
+
   @include flex-center;
-  
+
   transition: var(--transition);
   flex-shrink: 0;
   color: var(--red);

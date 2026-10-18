@@ -1,0 +1,97 @@
+.wrap {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.burger {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.bar,
+.bar::before,
+.bar::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--text);
+  transition:
+    top var(--transition),
+    transform var(--transition),
+    background-color var(--transition);
+}
+
+.bar {
+  position: relative;
+}
+
+.bar::before,
+.bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.bar::before {
+  top: -6px;
+}
+
+.bar::after {
+  top: 6px;
+}
+
+// Превращаем в крестик
+.barOpen {
+  background-color: transparent;
+
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px var(--container-padding) 16px;
+  background-color: var(--color-white);
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--text) 8%, transparent);
+
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
+
+  a {
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.panelOpen {
+  opacity: 1;
+  visibility: visible;
+}

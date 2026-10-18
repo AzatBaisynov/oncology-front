@@ -4,8 +4,15 @@
     "description": "Short site description for search engines and social networks"
   },
   "Header": {
-    "about": "About",
-    "contacts": "Contacts"
+    "nav": "Main navigation",
+    "menu": "Menu",
+    "language": "Language",
+    "news": "News",
+    "departments": "Departments",
+    "contacts": "Contacts",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "search": "Search",
+    "closeMenu": "Close menu"
   },
   "Hero": {
     "eyebrow": "Modern oncology — caring for what matters most",
@@ -20,22 +27,10 @@
     }
   },
   "About": {
-    "title": "About us",
-    "text": "About section text."
-  },
-  "Contacts": {
-    "title": "Contacts",
-    "phone": "Phone",
-    "email": "Email"
-  },
-  "Footer": {
-    "rights": "All rights reserved"
-  },
-  "NotFound": {
-    "title": "Page not found",
-    "back": "Back to home"
-  },
-  "Directions": {
+  "title": "About us",
+  "text": "About section text."
+},
+ "Directions": {
     "badge": "Priority Directions",
     "title": "Modern Approaches to Cancer Treatment",
     "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
@@ -52,5 +47,12 @@
       "title": "Radiation Therapy",
       "description": "High-tech equipment"
     }
+  },
+  "Footer": {
+    "rights": "All rights reserved"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "back": "Back to home"
   }
 }

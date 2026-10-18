@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer/Footer';
+import { Header } from '@/components/layout/Header';
 import '@/styles/index.scss';
+import { Footer } from '@/components/layout/Footer/Footer';
+
+
 
 const fontMain = Inter({
   variable: '--font-main',
@@ -14,13 +16,18 @@ const fontMain = Inter({
   display: 'swap',
 });
 
+
 const SITE_URL = 'https://example.kg';
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 
-export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
+export const generateStaticParams = () => {
+  return routing.locales.map((locale) => ({ locale }));
+};
+
+// Заголовок и описание страницы на каждом языке (из lang/*.json → "Meta")
+export const generateMetadata = async ({
+  params,
+}: LayoutProps<'/[locale]'>): Promise<Metadata> => {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Meta' });
 
@@ -39,17 +46,15 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
       type: 'website',
     },
   };
-}
+};
 
-export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
+const LocaleLayout = async ({ children, params }: LayoutProps<'/[locale]'>) => {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  setRequestLocale(locale);
-
   return (
     <html lang={locale} className={fontMain.variable}>
-      <body suppressHydrationWarning>
+      <body>
         <NextIntlClientProvider>
           <Header />
           <main>{children}</main>
@@ -58,4 +63,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       </body>
     </html>
   );
-}
+};
+
+export default LocaleLayout;

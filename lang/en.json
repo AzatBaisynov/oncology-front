@@ -1,0 +1,84 @@
+{
+  "Meta": {
+    "title": "Site title",
+    "description": "Short site description for search engines and social networks"
+  },
+  "Header": {
+    "nav": "Main navigation",
+    "menu": "Menu",
+    "language": "Language",
+    "news": "News",
+    "departments": "Departments",
+    "contacts": "Contacts",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "search": "Search",
+    "closeMenu": "Close menu"
+  },
+  "Hero": {
+    "eyebrow": "Modern oncology — caring for what matters most",
+    "title": "More possibilities <accent>for life</accent>",
+    "text": "Diagnosis, treatment and support <br></br>at every stage. We are here for you.",
+    "imageAlt": "National Oncology Center",
+    "cards": {
+      "diagnostics": { "title": "Diagnostics", "text": "Modern equipment" },
+      "treatment": { "title": "Treatment", "text": "Effective methods" },
+      "rehab": { "title": "Rehabilitation", "text": "Support at every stage" },
+      "consult": { "title": "Consultations", "text": "For patients and their families" }
+    }
+  },
+   "About": {
+    "title": "About us",
+    "text": "About section text."
+  },
+  "Directions": {
+    "badge": "Priority Directions",
+        "title": "Modern Approaches to Cancer Treatment",
+    "subtitle": "We develop key areas, introduce innovative technologies, and make advanced medical care accessible.",
+    "allDirections": "All directions",
+    "diagnostics": {
+      "title": "Diagnostics",
+      "description": "Accurate diagnostics is the basis of effective treatment"
+    },
+    "surgery": {
+      "title": "Surgical Treatment",
+      "description": "Modern and minimally invasive methods"
+    },
+    "radiation": {
+      "title": "Radiation Therapy",
+      "description": "High-tech equipment"
+    }
+  },
+  "Footer": {
+    "rights": "© 2026 National Oncology Center of the Kyrgyz Republic",
+    "slogan": "Care. Science. Life.",
+    "logoAlt": "National Oncology Center of the Kyrgyz Republic",
+    "navLabel": "Footer navigation",
+    "nav": {
+      "about": "About the Center",
+      "patients": "For Patients",
+      "specialists": "For Specialists",
+      "press": "Press Center",
+      "contacts": "Contacts"
+    }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "back": "Back to home"
+  },
+  "Location": {
+    "eyebrow": "How to find us",
+    "heading": "We are nearby",
+    "address": "92 Isy Akhunbaeva St., Bishkek",
+    "title": "National Oncology Center",
+    "phoneNote": "Unified contact center",
+    "button": "Get directions",
+    "pickerTitle": "Get directions",
+    "pickerSub": "Choose a navigation app",
+    "close": "Close",
+    "mapLabel": "Map",
+    "routes": {
+      "google": "Google Maps",
+      "gis": "2GIS"
+    }
+  }
+}

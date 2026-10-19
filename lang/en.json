@@ -98,6 +98,10 @@
     "title": "Page not found",
     "back": "Back to home"
   },
+  "News": {
+    "badge": "News",
+    "title": "Latest Events",
+    "allNews": "All news"
   "Contacts": {
     "title": "Contacts",
     "phone": "Phone",

@@ -113,10 +113,19 @@
       "google": "Google Maps",
       "gis": "2ГИС"
     },
+  },
+  "NotFound": {
+    "title": "Страница не найдена",
+    "back": "На главную"
+  },
+  "News": {
+    "badge": "Новости",
+    "title": "Актуальное",
+    "allNews": "Все новости"
+  },
   "Contacts": {
     "title": "Контакты",
     "phone": "Телефон",
     "email": "Почта"
   }
- }
 }

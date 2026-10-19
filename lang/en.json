@@ -98,21 +98,10 @@
     "title": "Page not found",
     "back": "Back to home"
   },
-  "Location": {
-    "eyebrow": "How to find us",
-    "heading": "We are nearby",
-    "address": "92 Isy Akhunbaeva St., Bishkek",
-    "title": "National Oncology Center",
-    "phoneNote": "Unified contact center",
-    "button": "Get directions",
-    "pickerTitle": "Get directions",
-    "pickerSub": "Choose a navigation app",
-    "close": "Close",
-    "mapLabel": "Map",
-    "routes": {
-      "google": "Google Maps",
-      "gis": "2GIS"
-    },
+  "News": {
+    "badge": "News",
+    "title": "Latest Events",
+    "allNews": "All news"
   "Contacts": {
     "title": "Contacts",
     "phone": "Phone",

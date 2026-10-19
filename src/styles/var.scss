@@ -16,6 +16,11 @@
   --shadow: rgba(0, 0, 0, 0.1);
   --shadow-nav: rgba(0, 0, 0, 0.04);
   --overlay: rgba(0, 0, 0, 0.5);
+  --color-accent-hover: #a31422;
+  --color-border: #cbd5e1;
+  --color-shadow-accent: rgba(199, 45, 54, 0.25);
+  --color-shadow-image: rgba(0, 0, 0, 0.03);
+  --color-shadow-card: rgba(0, 0, 0, 0.04);
 
   // ---- Шрифты ----
   // --font-main задаётся в app/[locale]/layout.tsx через next/font
@@ -31,6 +36,12 @@
   --container-width: 1240px;
   --container-padding: 20px;
   --section-gap: clamp(60px, 10vw, 120px);
+
+    // ---- Секция направлений ----
+  --directions-arc-top: clamp(56px, 13vw, 190px);
+  --directions-arc-bottom: clamp(36px, 5.5vw, 80px);
+  --directions-pad-top: clamp(28px, 3vw, 48px);
+  --directions-pad-bottom: clamp(16px, 2vw, 32px);
 
   // ---- Прочее ----
   --header-height: 72px;

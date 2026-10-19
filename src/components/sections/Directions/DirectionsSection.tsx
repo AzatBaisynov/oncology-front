@@ -41,11 +41,11 @@ export const DirectionsSection = () => {
                   height={16}
                 />
               </Link>
-              
+
               <div className={styles.arrows}>
-                <button 
+                <button
                   onClick={() => swiperRef.current?.slidePrev()}
-                  className={clsx(styles.arrowBtn, styles.left)} 
+                  className={clsx(styles.arrowBtn, styles.left)}
                   aria-label="Previous slide"
                 >
                   <Image
@@ -55,9 +55,9 @@ export const DirectionsSection = () => {
                     height={20}
                   />
                 </button>
-                <button 
+                <button
                   onClick={() => swiperRef.current?.slideNext()}
-                  className={styles.arrowBtn} 
+                  className={styles.arrowBtn}
                   aria-label="Next slide"
                 >
                   <Image

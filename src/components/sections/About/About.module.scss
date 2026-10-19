@@ -1,4 +1,250 @@
-.text {
-  max-width: 720px;
+.container {
+  width: 100%;
+}
+
+.wrapper {
+
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.7fr;
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+  padding: 80px 0;
+
+  @include mq(lg) {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+  }
+
+  @include mq(md) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.subtitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--grey);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.description {
   font-size: 18px;
+  line-height: 1.6;
+  color: var(--grey);
+  margin-bottom: 40px;
+  max-width: 540px;
+  display: block;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--color-shadow-card);
+  padding: 16px 8px;
+  width: calc(100% + 48px);
+  margin-bottom: 40px;
+  gap: 12px;
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 12px;
+  width: 100%;
+  min-width: 0;
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--color-border);
+  }
+}
+
+.statCaption {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: lowercase;
+  color: var(--grey);
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statValueNumber {
+  white-space: nowrap;
+}
+
+.statValueAccent {
+  width: 100%;
+  font-size: calc(var(--fs-h3) - 5px);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  display: block;
+}
+
+
+.statDesc {
+  font-size: 14px;
+  color: var(--grey);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.btn.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--red);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  border: 0;
+  width: auto;
+  text-decoration: none;
+  box-shadow: 0 4px 14px var(--color-shadow-accent);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  @include hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+  }
+}
+
+.btnIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  display: block;
+  margin: 0 0 0 auto;
+  box-shadow: 0 20px 40px var(--color-shadow-image);
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.mission {
+  background-color: var(--color-white);
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--color-shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+  width: 100%;
+  max-width: 300px;
+  min-height: 380px;
+  margin-left: -48px;
+  transform: translateY(-24px);
+
+  @include mq(lg) {
+    grid-column: span 2;
+    margin-top: 24px;
+    margin-left: 0;
+    align-self: start;
+    min-height: auto;
+    transform: none;
+  }
+
+  @include mq(md) {
+    grid-column: span 1;
+  }
+
+  @include mq(sm) {
+    margin-inline: auto;
+    max-width: none;
+  }
+}
+
+.quoteIcon {
+  font-size: 48px;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+  user-select: none;
+}
+
+.missionText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: block;
+  width: 100%;
+  flex-grow: 1;
+
+  @include mq(lg) {
+    flex-grow: 0;
+  }
+}
+
+.missionLine {
+  width: 32px;
+  height: 3px;
+  background-color: var(--red);
+  border-radius: 2px;
+}
+
+@include mq(sm) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .statItem:nth-child(2) {
+    border-right: 0;
+  }
+
+  .statItem:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--color-border);
+    padding-top: 12px;
+  }
 }

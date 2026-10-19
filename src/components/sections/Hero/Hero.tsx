@@ -4,7 +4,7 @@ import styles from './Hero.module.scss';
 import { heroCards } from './hero.data';
 
 
-export function Hero() {
+export const Hero = () => {
   const t = useTranslations('Hero');
 
   return (

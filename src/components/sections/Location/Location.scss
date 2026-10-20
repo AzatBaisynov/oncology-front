@@ -1,0 +1,321 @@
+$breakpoint-mobile: 820px;
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin focus-ring($offset: 3px) {
+  outline: 3px solid var(--text);
+  outline-offset: $offset;
+}
+
+.cb {
+  --cb-from: #eef1f6;
+  --cb-to: #eef1f6;
+  --cb-hover: #f4f6fa;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: min(100% - 2 * var(--container-padding), var(--container-width));
+  min-height: 350px;
+  margin: var(--section-gap) auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--cb-from);
+  color: var(--text);
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h2 {
+    margin: 0 0 28px;
+    font-size: var(--fs-h2);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  &__info {
+    position: relative;
+    z-index: 5;
+    padding: 44px 0 44px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mobile {
+      padding: 32px 24px 24px;
+    }
+  }
+
+  &__eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  &__row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    p {
+      margin: 0;
+      font-size: var(--fs-body);
+      line-height: 1.45;
+      font-weight: 500;
+    }
+  }
+
+  &__ico {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--red);
+    display: grid;
+    place-items: center;
+
+    img {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+  }
+
+  &__phone {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  &__sub {
+    font-size: var(--fs-small);
+    font-weight: 400;
+    color: var(--grey);
+  }
+
+  &__btn {
+    align-self: flex-start;
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    padding: 17px 30px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--red);
+    color: var(--color-white);
+    font: inherit;
+    font-size: var(--fs-small);
+    font-weight: 600;
+    line-height: 1;
+    transition: filter var(--transition);
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &__arrow {
+    width: 18px;
+    height: 12px;
+    display: block;
+  }
+
+  &__map {
+    position: absolute;
+    inset: 0 0 0 30%;
+    z-index: 1;
+    overflow: hidden;
+
+    @include mobile {
+      position: relative;
+      inset: auto;
+      height: 280px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 34%;
+      z-index: 800;
+      pointer-events: none;
+      background: linear-gradient(90deg, var(--cb-from), transparent);
+
+      @include mobile {
+        inset: 0 0 auto 0;
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(180deg, var(--cb-to), transparent);
+      }
+    }
+
+    .leaflet-container {
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      background: var(--cb-from);
+    }
+
+    .leaflet-control-attribution {
+      font-size: 10px;
+    }
+  }
+
+  &__pin {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--color-white);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--black) 18%, transparent);
+
+    img {
+      width: 24px;
+      height: 30px;
+      display: block;
+    }
+  }
+
+  &__label {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    width: 150px;
+    font-size: var(--fs-small);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--black) 14%, transparent);
+  }
+}
+
+.cb-marker {
+  background: none;
+  border: 0;
+
+  &__wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-27px, -50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none;
+  }
+}
+
+.cb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: color-mix(in srgb, var(--black) 45%, transparent);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.cb-modal {
+  --cb-from: #e4e8ef;
+  --cb-hover: #f4f6fa;
+
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+  box-shadow: 0 20px 50px color-mix(in srgb, var(--black) 30%, transparent);
+  color: var(--text);
+
+  h3 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__sub {
+    margin: 0 0 18px;
+    font-size: var(--fs-small);
+    color: var(--grey);
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--grey);
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--cb-from);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--fs-body);
+    transition: background var(--transition);
+
+    &:hover {
+      background: var(--cb-hover);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}
+
+.cb-logo {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  object-fit: contain;
+  display: block;
+}

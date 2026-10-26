@@ -1,8 +1,8 @@
 {
   "Meta": {
-    "title": "Site title",
-    "description": "Short site description for search engines and social networks"
-  },
+    "title": "National Oncology Center of the Kyrgyz Republic",
+    "description": "Cancer diagnostics, treatment and rehabilitation. Modern equipment, experienced doctors and patient support at every stage of care."
+},
   "Header": {
     "nav": "Main navigation",
     "menu": "Menu",
@@ -102,10 +102,10 @@
     "badge": "News",
     "title": "Latest Events",
     "allNews": "All news"
+  },
   "Contacts": {
     "title": "Contacts",
     "phone": "Phone",
     "email": "Email"
   }
- }
 }

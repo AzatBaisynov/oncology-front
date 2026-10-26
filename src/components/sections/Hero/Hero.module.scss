@@ -35,21 +35,28 @@
 }
 
 .media {
+  --media-left: 47.8%;
+  --media-bottom: 19%;
+  --expand: 0; 
+  --land: 0;  
+
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 47.8%;
-  bottom: 19%;
+  top: calc(var(--slot-top, 0px) * var(--land));
+  right: calc(var(--slot-right, 0px) * var(--land));
+  bottom: calc(var(--media-bottom) * (1 - var(--expand)) + var(--slot-bottom, 0px) * var(--land));
+  left: calc(var(--media-left) * (1 - var(--expand)) + var(--slot-left, 0px) * var(--land));
+  overflow: hidden;
+  border-radius: calc(var(--slot-radius, 0px) * var(--land));
   clip-path: url(#hero-clip);
 
   @include mq(lg) {
-    left: 46%;
-    bottom: 24%;
+    --media-left: 46%;
+    --media-bottom: 24%;
   }
 
   @include mq(md) {
-    left: 38%;
-    bottom: 6%;
+    --media-left: 38%;
+    --media-bottom: 6%;
   }
 }
 

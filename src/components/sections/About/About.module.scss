@@ -12,13 +12,22 @@
   padding: 80px 0;
 
   @include mq(lg) {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-areas:
+      'info image'
+      'info mission';
+    grid-template-rows: auto 1fr;
+    gap: 24px 32px;
   }
 
   @include mq(md) {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'info'
+      'image'
+      'mission';
+    grid-template-rows: auto;
+    gap: 32px;
   }
 }
 
@@ -27,6 +36,10 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+
+  @include mq(lg) {
+    grid-area: info;
+  }
 }
 
 .subtitle {
@@ -41,7 +54,7 @@
 
 .title {
   font-family: var(--font-family);
-  font-size: 52px;
+  font-size: clamp(2rem, 1.2rem + 2.5vw, 3.25rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--text);
@@ -161,6 +174,18 @@
   display: block;
   margin: 0 0 0 auto;
   box-shadow: 0 20px 40px var(--color-shadow-image);
+
+  @include mq(lg) {
+    grid-area: image;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    margin: 0;
+  }
+
+  @include mq(md) {
+    aspect-ratio: 16 / 8;
+  }
 }
 
 .img {
@@ -184,21 +209,12 @@
   transform: translateY(-24px);
 
   @include mq(lg) {
-    grid-column: span 2;
-    margin-top: 24px;
+    grid-area: mission;
+    max-width: none;
     margin-left: 0;
     align-self: start;
     min-height: auto;
     transform: none;
-  }
-
-  @include mq(md) {
-    grid-column: span 1;
-  }
-
-  @include mq(sm) {
-    margin-inline: auto;
-    max-width: none;
   }
 }
 

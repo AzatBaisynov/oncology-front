@@ -1,0 +1,32 @@
+.scene {
+  position: relative;
+}
+
+
+.layered {
+  overflow: hidden;
+
+  .about {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+
+   
+    > :global(.section) {
+      width: 100%;
+      padding-block: 0;
+    }
+
+    [data-about-wrapper] {
+      padding-block: 0;
+    }
+  }
+
+  [data-hero-media],
+  [data-hero-image] {
+    will-change: transform;
+  }
+}

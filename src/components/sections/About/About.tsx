@@ -10,9 +10,9 @@ export const About = () => {
   return (
     <section id="about" className="section">
       <div className={clsx('container', styles.container)}>
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} data-about-wrapper>
 
-          <div className={styles.info}>
+          <div className={styles.info} data-about-info>
             <span className={styles.subtitle}>
               {t('subtitle')}
             </span>
@@ -78,9 +78,9 @@ export const About = () => {
 
           </div>
 
-          <div className={styles.imageContainer}>
+          <div className={styles.imageContainer} data-about-image>
             <Image
-              src="/images/about/building.jpg"
+              src="https://picsum.photos/id/1067/1920/1200"
               alt={t('imageAlt')}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -89,7 +89,7 @@ export const About = () => {
             />
           </div>
 
-          <div className={styles.mission}>
+          <div className={styles.mission} data-about-reveal>
             <span className={styles.quoteIcon}>
               “
             </span>

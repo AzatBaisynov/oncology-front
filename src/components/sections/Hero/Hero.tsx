@@ -9,15 +9,15 @@ export const Hero = () => {
 
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.dots} aria-hidden="true" />
+      <div className={styles.dots} aria-hidden="true" data-hero-dots />
 
       <svg className={styles.clipDefs} aria-hidden="true" focusable="false">
         <clipPath id="hero-clip" clipPathUnits="objectBoundingBox">
-          <path d="M0.14,0 C0.05,0 0,0.12 0,0.27 C0,0.55 0.28,0.92 0.62,1 L1,1 L1,0 Z" />
+          <path data-hero-clip d="M0.14,0 C0.05,0 0,0.12 0,0.27 C0,0.55 0.28,0.92 0.62,1 L1,1 L1,0 Z" />
         </clipPath>
       </svg>
 
-      <div className={styles.media}>
+      <div className={styles.media} data-hero-media>
         <Image
         // ссылка на фото пока что заглушка просто
           src="https://picsum.photos/id/1067/1920/1200"
@@ -26,11 +26,12 @@ export const Hero = () => {
           priority
           sizes="(max-width: 1023px) 100vw, 60vw"
           className={styles.image}
+          data-hero-image
         />
       </div>
 
       <div className={`container ${styles.inner}`}>
-        <div className={styles.content}>
+        <div className={styles.content} data-hero-content>
           <p className={styles.eyebrow}>{t('eyebrow')}</p>
           <h1 className={styles.title}>
             {t.rich('title', { accent: (chunks) => <em>{chunks}</em> })}
@@ -38,7 +39,7 @@ export const Hero = () => {
           <p className={styles.text}>{t.rich('text', { br: () => <br /> })}</p>
         </div>
 
-        <ul className={styles.cards}>
+        <ul className={styles.cards} data-hero-cards>
           {heroCards.map(({ key, path }) => (
             <li key={key} className={styles.card}>
               <span className={styles.icon}>
